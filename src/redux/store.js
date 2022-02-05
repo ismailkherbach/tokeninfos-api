@@ -13,7 +13,6 @@ export function configureStore(initialState) {
     initialState,
     compose(applyMiddleware(...middlewares))
   );
-
   sagaMiddleware.run(sagas);
 
   if (module.hot) {
