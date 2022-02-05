@@ -1,0 +1,316 @@
+@import "./colors.scss";
+@import "./tags.scss";
+@import "./mixins";
+@import "./fonts.scss";
+@font-face {
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  //font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  vertical-align: baseline;
+  background-color: #0e0b2b;
+  line-height: 1.3;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  color: #100937;
+  font-family: "Poppins", serif;
+}
+
+* {
+  box-sizing: border-box;
+  @include desktop-tablet {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+button:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow-y: scroll;
+}
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+::placeholder {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.flex {
+  display: flex;
+}
+.fdc {
+  flex-direction: column;
+}
+.fdcr {
+  flex-direction: column-reverse;
+}
+.fdr {
+  flex-direction: row;
+}
+.fdrr {
+  flex-direction: row-reverse;
+}
+.jcc {
+  justify-content: center;
+}
+.jcfs {
+  justify-content: flex-start;
+}
+.jcfe {
+  justify-content: flex-end;
+}
+.jcsb {
+  justify-content: space-between;
+}
+.jcsa {
+  justify-content: space-around;
+}
+.jcse {
+  justify-content: space-evenly;
+}
+.aic {
+  align-items: center;
+}
+.aifs {
+  align-items: flex-start;
+}
+.aife {
+  align-items: flex-end;
+}
+.ais {
+  align-items: stretch;
+}
+.aib {
+  align-items: baseline;
+}
+.fww {
+  flex-wrap: wrap;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.wb-100 {
+  width: 100%;
+}
+.bld {
+  font-weight: 600;
+}
+.rgl {
+  font-weight: 400;
+}
+.right {
+  right: 0;
+}
+.left {
+  left: 0;
+}
+.loading {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: relative;
+  z-index: 1;
+}
+
+.loading-main-button {
+  width: 25px;
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: var(--orange);
+  animation: spin 0.5s ease-in-out infinite;
+  -webkit-animation: spin 0.5s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  z-index: 1;
+}
+
+.loading-button-overlay {
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.5s ease-in-out infinite;
+  -webkit-animation: spin 0.5s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: relative;
+  z-index: 1;
+}
+
+.loading {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: fixed;
+  z-index: 1;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
